@@ -1,0 +1,103 @@
+.tree-container {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  width: 420px;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.tree-node {
+  position: relative;
+  margin-left: 30px;
+}
+
+.tree-node:first-child {
+  margin-left: 0;
+}
+
+.node-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.node-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.node-circle.root {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+}
+
+.node-circle.child {
+  background: linear-gradient(135deg, #a4d65e, #8bc34a);
+}
+
+.node-label {
+  background: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.node-plus {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  font-size: 16px;
+  background: white;
+}
+
+.node-plus:hover {
+  background: #f5f5f5;
+}
+
+.node-children {
+  position: relative;
+  margin-left: 20px;
+}
+
+/* Vertical dashed line from parent to children */
+.tree-node.has-children::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 55px;
+  bottom: 0;
+  width: 1px;
+  border-left: 2px dashed #d0d0d0;
+}
+
+/* Horizontal dashed line to each child */
+.node-children > .tree-node::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 20px;
+  height: 1px;
+  border-top: 2px dashed #d0d0d0;
+}
