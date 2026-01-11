@@ -1,8 +1,12 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
 }
 
 .logo {
@@ -39,4 +43,20 @@
 
 .read-the-docs {
   color: #888;
+}
+
+body {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.tree-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 40px auto;
 }
